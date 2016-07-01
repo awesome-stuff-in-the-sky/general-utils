@@ -1,0 +1,37 @@
+plugins {
+    id 'com.jfrog.bintray'			version '1.6'
+    id 'com.github.kt3k.coveralls' 	version '2.6.3'
+}
+
+
+apply plugin: 'java'
+apply plugin: 'wrapper'
+apply plugin: 'eclipse'
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+compileJava.options.encoding = 'UTF-8'
+wrapper.gradleVersion = '2.13'
+
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+	compile		group: 'javax', 						name: 'javaee-api', 		version: '7.0'
+	compile		group: 'com.fasterxml.jackson.core', 	name: 'jackson-databind', 	version: '2.7.1'
+	compile		group: 'junit', 						name: 'junit', 				version: '4.12'
+	
+	testCompile group: 'junit', 						name: 'junit', 				version: '4.12'
+	testCompile group: 'io.dropwizard',					name: 'dropwizard-core',	version: '0.9.1'
+}
+
+
+apply from: 'gradle/bintray.gradle'
+apply from: 'gradle/jacoco-coveralls.gradle'
+apply from: 'gradle/pmd.gradle'
+apply from: 'gradle/checkstyle.gradle'
+

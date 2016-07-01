@@ -1,0 +1,10 @@
+language: java
+jdk:
+  - oraclejdk8
+
+script:
+  - ./gradlew check
+  - ./gradlew jacocoTestReport coveralls
+  - if [[ "$TRAVIS_TAG" == *"v1."* ]]; then
+      ./gradlew bintrayUpload;
+    fi

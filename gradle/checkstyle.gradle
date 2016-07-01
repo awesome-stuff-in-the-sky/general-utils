@@ -1,0 +1,10 @@
+apply plugin: 'checkstyle'
+
+
+checkstyle {
+	toolVersion = '7.0'
+	ignoreFailures = true
+	showViolations = false
+	sourceSets = [ sourceSets.main ]
+	configFile = 'config/checkstyle.xml' as File
+}

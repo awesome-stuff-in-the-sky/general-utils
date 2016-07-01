@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			name="caleia_pmd"
+			xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+	<description>PMD Ruleset</description>
+	<!-- Basic -->
+	<rule ref="rulesets/java/basic.xml/JumbledIncrementer"/>
+	<rule ref="rulesets/java/basic.xml/ForLoopShouldBeWhileLoop"/>
+	<rule ref="rulesets/java/basic.xml/OverrideBothEqualsAndHashcode"/>
+	<rule ref="rulesets/java/basic.xml/DoubleCheckedLocking"/>
+	<rule ref="rulesets/java/basic.xml/ReturnFromFinallyBlock"/>
+	<rule ref="rulesets/java/basic.xml/UnconditionalIfStatement"/>
+	<rule ref="rulesets/java/basic.xml/BooleanInstantiation"/>
+	<rule ref="rulesets/java/basic.xml/CollapsibleIfStatements"/>
+	<rule ref="rulesets/java/basic.xml/ClassCastExceptionWithToArray"/>
+	<rule ref="rulesets/java/basic.xml/AvoidDecimalLiteralsInBigDecimalConstructor"/>
+	<rule ref="rulesets/java/basic.xml/MisplacedNullCheck"/>
+	<rule ref="rulesets/java/basic.xml/AvoidThreadGroup"/>
+	<rule ref="rulesets/java/basic.xml/BrokenNullCheck"/>
+	<rule ref="rulesets/java/basic.xml/BigIntegerInstantiation"/>
+	<rule ref="rulesets/java/basic.xml/AvoidUsingOctalValues">
+		<properties>
+			<property name="strict" value="true"/>
+		</properties>
+	</rule>
+	<rule ref="rulesets/java/basic.xml/AvoidUsingHardCodedIP"/>
+	<rule ref="rulesets/java/basic.xml/CheckResultSet"/>
+	<rule ref="rulesets/java/basic.xml/AvoidMultipleUnaryOperators"/>
+	<rule ref="rulesets/java/basic.xml/ExtendsObject"/>
+	<rule ref="rulesets/java/basic.xml/CheckSkipResult"/>
+	<rule ref="rulesets/java/basic.xml/AvoidBranchingStatementAsLastInLoop"/>
+	<rule ref="rulesets/java/basic.xml/DontCallThreadRun"/>
+	<rule ref="rulesets/java/basic.xml/DontUseFloatTypeForLoopIndices"/>
+	
+	<!-- Braces -->
+	<rule ref="rulesets/java/braces.xml/IfStmtsMustUseBraces"/>
+	<rule ref="rulesets/java/braces.xml/WhileLoopsMustUseBraces"/>
+	<rule ref="rulesets/java/braces.xml/IfElseStmtsMustUseBraces"/>
+	<rule ref="rulesets/java/braces.xml/ForLoopsMustUseBraces"/>
+	
+	<!-- Code Size -->
+	<rule ref="rulesets/java/codesize.xml/NPathComplexity">
+		<properties>
+			<property name="minimum" value="10"/>
+		</properties>
+	</rule>
+	<rule ref="rulesets/java/codesize.xml/ExcessiveMethodLength">
+		<properties>
+			<property name="minimum" value="30"/>
+		</properties>
+	</rule>
+	<rule ref="rulesets/java/codesize.xml/ExcessiveParameterList">
+		<properties>
+			<property name="minimum" value="5"/>
+		</properties>
+	</rule>
+	<rule ref="rulesets/java/codesize.xml/ExcessiveClassLength">
+		<properties>
+			<property name="minimum" value="150"/>
+		</properties>
+	</rule>
+	<rule ref="rulesets/java/codesize.xml/CyclomaticComplexity">
+		<properties>
+			<property name="reportLevel" value="5"/>
+		</properties>
+	</rule>
+	<rule ref="rulesets/java/codesize.xml/ExcessivePublicCount">
+		<properties>
+			<property name="minimum" value="10"/>
+		</properties>
+	</rule>
+	<rule ref="rulesets/java/codesize.xml/TooManyFields">
+		<properties>
+			<property name="maxfields" value="5"/>
+		</properties>
+	</rule>
+	<rule ref="rulesets/java/codesize.xml/NcssMethodCount">
+		<properties>
+			<property name="minimum" value="20"/>
+		</properties>
+	</rule>
+	<rule ref="rulesets/java/codesize.xml/NcssTypeCount">
+		<properties>
+			<property name="minimum" value="100"/>
+		</properties>
+	</rule>
+	<rule ref="rulesets/java/codesize.xml/NcssConstructorCount">
+		<properties>
+			<property name="minimum" value="5"/>
+		</properties>
+	</rule>
+	<rule ref="rulesets/java/codesize.xml/TooManyMethods"/>
+	
+	<!-- Comments -->
+	<rule ref="rulesets/java/comments.xml/CommentRequired">
+		<properties>
+			<!--<property name="serialVersionUIDCommentRequired" value="Unwanted"/>-->
+		</properties>
+	</rule>
+	<rule ref="rulesets/java/comments.xml/CommentSize">
+		<properties>
+			<property name="maxLineLength" value="120"/>
+		</properties>
+	</rule>
+	<rule ref="rulesets/java/comments.xml/CommentContent">
+		<properties>
+			<property name="disallowedTerms" value="idiot|jerk|stupid"/>
+		</properties>
+	</rule>
+	
+	<!-- Controversial -->
+	<rule ref="rulesets/java/controversial.xml/NullAssignment"/>
+	<rule ref="rulesets/java/controversial.xml/AssignmentInOperand"/>
+	<rule ref="rulesets/java/controversial.xml/AtLeastOneConstructor"/>
+	<rule ref="rulesets/java/controversial.xml/DontImportSun"/>
+	<rule ref="rulesets/java/controversial.xml/SuspiciousOctalEscape"/>
+	<rule ref="rulesets/java/controversial.xml/UnnecessaryParentheses"/>
+	<rule ref="rulesets/java/controversial.xml/DataflowAnomalyAnalysis"/>
+	<rule ref="rulesets/java/controversial.xml/AvoidFinalLocalVariable"/>
+	<rule ref="rulesets/java/controversial.xml/AvoidUsingShortType"/>
+	<rule ref="rulesets/java/controversial.xml/AvoidUsingVolatile"/>
+	<rule ref="rulesets/java/controversial.xml/AvoidUsingNativeCode"/>
+	<rule ref="rulesets/java/controversial.xml/AvoidAccessibilityAlteration"/>
+	<rule ref="rulesets/java/controversial.xml/DoNotCallGarbageCollectionExplicitly"/>
+	<rule ref="rulesets/java/controversial.xml/OneDeclarationPerLine">
+		<properties>
+			<property name="strictMode" value="true"/>
+		</properties>
+	</rule>
+	<rule ref="rulesets/java/controversial.xml/AvoidLiteralsInIfCondition"/>
+	<rule ref="rulesets/java/controversial.xml/UseObjectForClearerAPI"/>
+	
+	<!-- Coupling -->
+	<rule ref="rulesets/java/coupling.xml/CouplingBetweenObjects">
+		<properties>
+			<property name="threshold" value="5"/>
+		</properties>
+	</rule>
+	<rule ref="rulesets/java/coupling.xml/ExcessiveImports">
+		<properties>
+			<property name="minimum" value="5"/>
+		</properties>
+	</rule>
+	<rule ref="rulesets/java/coupling.xml/LooseCoupling"/>
+	<rule ref="rulesets/java/coupling.xml/LawOfDemeter"/>
+	
+</ruleset>
